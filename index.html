@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    header {
+      background: #fff9f9;
+      color: rgb(34, 33, 33);
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #222;
+      padding: 0.5em 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: rgb(255, 243, 243);
+      text-decoration: none;
+      padding: 0.5em 1em;
+      margin: 0 10px;
+      border-radius: 5px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      background: #f0e4e4;
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(255, 249, 249);
+      font-size: 2em;
+      position: relative;
+    }
+
+    .overlay {
+      background: rgba(117, 115, 115, 0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #section1 { background: url('https://wallpapers.com/images/hd/cartoon-space-background-2ygqr1714ju2aix6.jpg') center/cover fixed; }
+    #section2 { background: url('https://s1.1zoom.me/big0/888/Earth_Moon_547876_1031x1024.jpg') center/cover fixed; }
+    #section3 { background: url('https://wallpaperaccess.com/full/47119.jpg') center/cover fixed; }
+    #section4 { background: url('https://wallpapercrafter.com/desktop1/507691-fantasy-sky-science-fiction-rocks-stars-sci-fi.jpg') center/cover fixed; }
+
+    /* Add more sections as needed */
+
+    .content {
+      text-align: center;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#section1">Section 1</a>
+    <a href="#section2">Section 2</a>
+    <a href="#section3">Section 3</a>
+    <a href="#section4">Section 4</a>
+  </nav>
+  <div class="section" id="section1">
+    <div class="overlay"></div>
+    <div class="content">
+      <p>Supernatural</p>
+      <p>Outer space, commonly referred to simply as space, is the expanse that exists beyond Earth and its atmosphere and between celestial bodies.
+         Outer space is not completely empty; it is a near-perfect vacuum containing a low density of particles, predominantly a plasma of hydrogen
+          and helium as well as electromagnetic radiation, magnetic fields, neutrinos, dust, and cosmic rays</p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="overlay"></div>
+    <div class="content">
+      <p>Humanity has studied space since antiquity, when people first looked up and observed the wonders of the cosmos.
+         Today, we send rockets, astronauts and probes into the solar system and beyond.Our expert coverage includes the 
+         latest updates on NASA, the James Webb Space Telescope, and firms like SpaceX,making it the ultimate resource for space enthusiasts.</p>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="overlay"></div>
+    <div class="content">
+      <p></p>
+      <p>NASA wants astronaut boots back on the moon a few years from now, and the space agency is investing heavily in its Artemis program to make it happen.
+         It's part of an ambitious and risky plan to establish a more permanent human presence off-world..</p>
+    </div>
+  </div>
+
+  <div class="section" id="section4">
+    <div class="overlay"></div>
+    <div class="content">
+      <p> People tend to liken space exploration to expansion on Earth—pushing the frontier. But on the edge of terrestrial frontiers, people were seeking, say, 
+        gold or more farmable land. In space, explorers can't be sure of the value proposition at their destination.
+         “So we have to be a little bit careful about thinking that it will just somehow pay off,” Weinzierl points out.</p>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
